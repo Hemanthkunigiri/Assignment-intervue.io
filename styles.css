@@ -1,0 +1,42 @@
+/*
+  Custom styles for the Intervue page.
+  This complements the Tailwind CSS utility classes used in the HTML.
+*/
+
+/* Base body styles */
+body {
+    font-family: 'Sora', sans-serif;
+    color: rgb(31 41 55); /* Equivalent to text-gray-800 */
+}
+
+/* FAQ Accordion Styles */
+
+/* The container for the answer, hidden by default */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition-property: max-height, padding; /* Smooth transition for height and padding */
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* When the parent item is active, show the answer */
+.faq-item.active .faq-answer {
+    max-height: 20rem; /* A large enough value to accommodate content */
+    padding-bottom: 1.5rem; /* Add padding when open */
+}
+
+/* Hide the minus icon by default */
+.faq-item .minus-icon {
+    display: none;
+}
+
+/* When the parent item is active, hide the plus icon */
+.faq-item.active .plus-icon {
+    display: none;
+}
+
+/* When the parent item is active, show the minus icon */
+.faq-item.active .minus-icon {
+    display: block;
+}
